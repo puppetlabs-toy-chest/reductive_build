@@ -2,7 +2,6 @@
 
 # The tasks associated with building Reductive Labs projects
 
-require 'facter'
 require 'rbconfig'
 require 'rake'
 require 'rake/tasklib'
@@ -208,7 +207,6 @@ class Rake::RedLabProject < Rake::TaskLib
           @version = version || self.currentversion
         end
 
-        @os = Facter["operatingsystem"].value
         @defaulttask = :alltests
         @publishdir = "/opt/rl/docroots/reductivelabs.com/htdocs/downloads"
         @pkgpublishdir = "#{@publishdir}/#{@name}"

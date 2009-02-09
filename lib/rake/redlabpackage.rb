@@ -158,8 +158,6 @@ class Rake::RedLabPackageTask < Rake::TaskLib
         @license        = "COPYING"
         @readme         = "README"
 
-        @os             = Facter["operatingsystem"].value
-
         yield self if block_given?
 
         define unless name.nil?
