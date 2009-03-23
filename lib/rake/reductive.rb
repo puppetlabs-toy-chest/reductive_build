@@ -208,7 +208,7 @@ class Rake::RedLabProject < Rake::TaskLib
         end
 
         @defaulttask = :alltests
-        @publishdir = "/opt/rl/docroots/reductivelabs.com/htdocs/downloads"
+        @publishdir = "/var/www/reductive/downloads"
         @pkgpublishdir = "#{@publishdir}/#{@name}"
 
         @email = "dev@reductivelabs.com"
@@ -351,7 +351,7 @@ class Rake::RedLabProject < Rake::TaskLib
 
     def mktasktrac_version
         task :trac_version => [:update_version] do
-            tracpath = "/opt/rl/trac/#{@name}"
+            tracpath = "/var/trac/#{@name}"
 
             unless FileTest.exists?(tracpath)
                 announce "No Trac instance at %s" % tracpath
